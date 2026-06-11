@@ -1,0 +1,395 @@
+/* =========================
+   RESET & BASE STYLES
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #222;
+    background-color: #f8f9fa;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid #005fcc;
+    outline-offset: 3px;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+main {
+    padding: 3rem 0;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1,
+header p {
+    color: white;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: .75rem 1rem;
+    border-radius: 6px;
+    transition: background .3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background: rgba(255, 255, 255, .15);
+}
+
+nav a[aria-current="page"] {
+    background: #2563eb;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+    background: #1d4ed8;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    transition: .3s ease;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .1);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.about-text {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+#cv {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+#contact-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+}
+
+form div {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: .9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+}
+
+#btn {
+    display: block;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover,
+button:focus {
+    background: #1d4ed8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.project-card,
+.skill-card,
+.about-text {
+    transition: all .3s ease;
+}
+
+.project-card:hover,
+.about-text:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    form {
+        padding: 1.25rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
